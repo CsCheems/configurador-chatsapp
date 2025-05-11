@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js" crossorigin="anonymous"></script>
+    <title>Configurador de Chatsapp</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="url-header">
+          <h2>CHATSAPP URL</h2>
+          <input class="url-settings" type="text" readonly id="widgetUrlInput"/>
+          <button class="btn-guardar" id="btnWidgetUrl" onclick="copiarUrl()">Click para generar URL</button>
+        </div>
+
+        <div class="settings-container">
+          <h2>Configuraciones</h2>
+
+          <h4>Apariencia</h4>
+
+          <div class="row" id="fondoPantalla">
+            <span class="switch-label">URL del Fondo de Pantalla</span>
+            <input type="text" id="imagenFondo" value="">
+          </div>
+
+          <div class="row" id="fondoColorPantalla">
+            <span class="switch-label">Selecciona un Color de fondo</span>
+            <input type="color" id="fondoColor" value="">
+          </div>
+
+          <div class="row" id="opacidadPantalla">
+            <span class="switch-label">Selecciona la Opacidad (<strong>Solo si no asignaste imagen</strong>)</span>
+            <input type="number" id="opacidad" value="">
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Avatar</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostarAvatar" >
+              <span class="slider"></span>
+            </label>
+          </div>
+      
+          <div class="row">
+            <span class="switch-label">Mostrar Tiempo</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarTiempo">
+              <span class="slider"></span>
+            </label>
+          </div>
+      
+          <div class="row">
+            <span class="switch-label">Mostrar Insignias</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostarInsigneas" >
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <h4>General</h4>
+      
+          <div class="row">
+            <span class="switch-label">Permitir Imágenes</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostarImagenes">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Roles Permitidos</span>
+            <label class="switch">
+              <select name="select" class="options" id="rolesId">
+                <option value="4">Streamer</option>
+                <option value="3">Moderadores y Streamer</option>
+                <option value="2" >Vips, Moderadores y Streamer</option>
+                <option value="1">Todos</option>
+                <option value="0" selected>Nadie</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Excluir Comandos</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-excluirComandos">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Tamaño de fuente</span>
+            <input type="number" id="tamañoFuente" min="1" max="42" value="">
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Usuarios Ignorados</span>
+            <input type="text" id="usuariosIgnorados" value="">
+          </div>
+
+          <h4>¿Que mensajes quieres que se muestren?</h4>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Canjeos de canal (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarCanjes" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Mensajes Destacados (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarDestacado" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Donacion de Bits (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarMensajesBits" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Raids </span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarRaids">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Follows</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarFollow">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Subs (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarSubs" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Subs Regaladas (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarSubsRegaladas" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Mostrar Emotes Gigantes (<strong>proximamente</strong>)</span>
+            <label class="switch">
+              <input type="checkbox" id="toggle-mostrarEmotesGigantes" disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <h4>Streamerbot</h4>
+
+          <div class="row">
+            <span class="switch-label">Host</span>
+            <input type="text" id="hostInput" value="127.0.0.1">
+          </div>
+
+          <div class="row">
+            <span class="switch-label">Puerto</span>
+            <input type="text" id="portInput" value="8080">
+          </div>
+      
+        </div>
+       
+
+    </div>
+
+
+    
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</html>

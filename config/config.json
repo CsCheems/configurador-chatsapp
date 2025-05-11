@@ -1,0 +1,153 @@
+{
+    "config":[
+        {
+            "id": "imagenFondo",
+            "label": "Url de Fondo de Pantalla",
+            "type": "text",
+            "defaultValue": "https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg",
+            "group": "Visual"
+        },
+        {
+            "id": "fondoColor",
+            "label": "Selecciona un Color de fondo",
+            "type": "color",
+            "defaultValue": "#898989",
+            "group": "Visual"
+        },
+        {
+            "id": "opacidad",
+            "label": "Selecciona la Opacidad (0 - 1)",
+            "type": "number",
+            "defaultValue": "1",
+            "group": "Visual"
+        },
+        {
+            "id": "mostarAvatar",
+            "label": "Mostar Avatar",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarTiempo",
+            "label": "Mostar Tiempo",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "mostarInsigneas",
+            "label": "Mostar Insigneas",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "mostarImagenes",
+            "label": "Permitir Imagenes",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "rolesId",
+            "label": "Roles Permitidos",
+            "type": "select",
+            "defaultValue": 0, 
+            "group":"General"
+        },
+        {
+            "id": "mostrarCanjes",
+            "label": "Mostrar Canjes de Canal",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarDestacado",
+            "label": "Mostrar Mensajes Destacados",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarMensajesBits",
+            "label": "Mostrar Mensajes de Bits",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarRaids",
+            "label": "Mostrar Raids",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarFollow",
+            "label": "Mostrar Follows",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarSubs",
+            "label": "Mostrar Subs",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarSubsRegaladas",
+            "label": "Mostrar Subs Regaladas",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "mostrarEmotesGigantes",
+            "label": "Mostrar Emotes Gigantes",
+            "type": "checkbox",
+            "defaultValue": false,
+            "group": "Visual"
+        },
+        {
+            "id": "excluirComandos",
+            "label": "Excluir Comandos",
+            "type": "checkbox",
+            "defaultValue": true,
+            "group": "General"
+        },
+        {
+            "id": "tamañoFuente",
+            "label": "Tamaño de Fuente",
+            "type": "number",
+            "min": 0,
+            "max": 42,
+            "defaultValue": 16,
+            "group": "Visual"
+        },
+        {
+			"id": "usuariosIgnorados",
+			"label": "Usuarios Ignorados",
+			"type": "text",
+			"defaultValue": "StreamElements, Streamlabs, Nightbot",
+			"group": "General"
+		},
+        {
+			"id": "hostInput",
+			"label": "Host",
+			"type": "text",
+			"defaultValue": "127.0.0.1",
+			"group": "General"
+		},
+        {
+			"id": "portInput",
+			"label": "Puerto",
+			"type": "text",
+			"defaultValue": "8080",
+			"group": "General"
+		}
+    ]
+}
